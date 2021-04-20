@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .my-page {
+        @apply mt-8 mb-20;
+    }
+
+    .my-standard {
+        @apply my-8 sm:my-12 lg:my-16;
+    }
+
+    .h1 {
+        @apply text-5xl sm:text-6xl font-bold;
+    }
+
+    .h2 {
+        @apply text-4xl sm:text-5xl lg:text-6xl font-bold;
+    }
+
+    .h3 {
+        @apply text-3xl sm:text-4xl font-bold;
+    }
+
+    p {
+        @apply text-gray-800;
+    }
+}
