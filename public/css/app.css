@@ -551,6 +551,81 @@ video {
   height: auto;
 }
 
+.my-page {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.my-standard {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .my-standard {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .my-standard {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .h2 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .h2 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+.h3 {
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .h3 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+p {
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
+
 .container {
   width: 100%;
 }

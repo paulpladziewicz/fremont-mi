@@ -10,19 +10,19 @@
 </head>
 <body class="max-w-screen-xl mx-auto">
 
-<nav class="my-4 flex justify-between items-center">
-    <div class='text-3xl font-black'><a href="{{route('home')}}"><span class='text-purple-700'>Fremont<span
+<nav class="m-4 flex flex-wrap justify-between items-center">
+    <div class='text-3xl font-black -mt-1'><a href="{{route('home')}}"><span class='text-purple-700'>Fremont<span
                     class='text-gray-800'>MI</span></span></a>
     </div>
     <ul class="flex text-lg font-semibold">
-        <li class="ml-3"><a href="{{route('posts')}}">People</a></li>
-        <li class="ml-3"><a href="">Events</a></li>
-        <li class="ml-3"><a href="">Business</a></li>
-        <li class="ml-3"><a href="{{route('dashboard')}}">Dashboard</a></li>
+        <li class="ml-3"><a href="{{route('people')}}">People</a></li>
+        <li class="ml-3"><a href="{{route('events')}}">Events</a></li>
+        <li class="ml-3"><a href="{{route('business')}}">Business</a></li>
     </ul>
     <ul class="flex text-lg font-semibold">
         @auth
-            <li class="ml-3"><a href="">{{auth()->user()->name}}</a></li>
+            <li class="ml-3"><a href="{{route('dashboard')}}">{{auth()->user()->name}}</a></li>
+            <li class="ml-3 font-normal"><a href="{{route('dashboard')}}">Dashboard</a></li>
             <li class="ml-3">
                 <form action="{{route('logout')}}" method="post">
                     @csrf
