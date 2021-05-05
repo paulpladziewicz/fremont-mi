@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['store', 'destroy']);
+    }
+
     public function index()
     {
         return view('events');
@@ -18,6 +24,16 @@ class EventsController extends Controller
             'description' => 'required'
         ]);
 
+        $event = new Event();
+
+        $event->title = $request->title;
+
+        return back();
+    }
+
+    public function destroy(Request $request)
+    {
+//        $this->authorize('delete', $event);
         return back();
     }
 }

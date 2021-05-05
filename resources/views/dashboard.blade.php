@@ -61,6 +61,46 @@
             <h2 class="h2 text-gray-800">Publish Businesses</h2>
             <p class="text-xl font-medium mt-2">Provide the details needed to post a business on the community business
                 page.</p>
+
+            <div>
+                <form class="w-8/12 mx-auto" action="{{route('business')}}" method="post">
+                    @csrf
+
+                    <div class="mb-4">
+                        <label for="name" class="">Business Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Business Name"
+                               class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('title') border-red-500 @enderror"
+                               value="{{ old('title') }}">
+                        @error('title')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="description" class="">Business Description</label>
+                        <textarea
+                            class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y @error('description') border-red-500 @enderror"
+                            name="description" id="description" rows="5"
+                            placeholder="Enter Event Description">{{old('description')}}</textarea>
+                        @error('description')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+
+                    <div>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
         </div>
 
     </div>

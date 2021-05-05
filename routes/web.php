@@ -33,4 +33,5 @@ Route::post('/events', [EventsController::class, 'store']);
 Route::get('/events/{title}', [EventsController::class, 'index'])->name('events.page');
 
 Route::get('/business', [BusinessController::class, 'index'])->name('business');
+Route::post('/business', [BusinessController::class, 'store']);
 
