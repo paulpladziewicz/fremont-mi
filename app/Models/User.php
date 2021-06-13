@@ -41,18 +41,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function posts()
+    public function events()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Event::class);
     }
-
-    public function likes()
+    public function business()
     {
-        return $this->hasMany(Like::class);
-    }
-
-    public function receivedLikes()
-    {
-        return $this->hasManyThrough(Like::class, Post::class);
+        return $this->hasMany(Business::class);
     }
 }

@@ -18,11 +18,13 @@ class BusinessController extends Controller
     }
 
     public function store(Request $request) {
+
         $this->validate($request, [
             'name' => 'required'
         ]);
 
         Business::create([
+            'user_id' => $request->user()->id,
             'name' => $request->name,
             'description' => $request->description
         ]);

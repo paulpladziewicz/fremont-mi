@@ -5,11 +5,13 @@
         Business
     </section>
 
-    <div>
+    <div class="flex">
         @if ($business->count())
             @foreach ($business as $listing)
-                <h3>{{$listing->name}}</h3>
-                <p>{{$listing->description}}</p>
+                <div class="p-4 border-2 m-4">
+                    <h3 class="text-2xl font-bold">{{$listing->name}}</h3>
+                    <p class="mt-2">{{$listing->description}}</p>
+                </div>
             @endforeach
 
         @else

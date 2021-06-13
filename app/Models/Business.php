@@ -13,6 +13,7 @@ class Business extends Model
     protected $primaryKey = 'business_id';
 
     protected $fillable = [
+        'user_id',
         'name',
         'description'
     ];
