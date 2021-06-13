@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
 {
@@ -14,7 +15,11 @@ class EventsController extends Controller
 
     public function index()
     {
-        return view('events');
+        $events = DB::table('events')->get();
+
+        return view('events', [
+            'events' => $events
+        ]);
     }
 
     public function store(Request $request)
@@ -24,9 +29,13 @@ class EventsController extends Controller
             'description' => 'required'
         ]);
 
-        $event = new Event();
-
-        $event->title = $request->title;
+        Event::create([
+            'user_id' => $request->user()->id,
+            'title' => $request->title,
+            'description' => $request->description,
+            'time' => 0,
+            'link' => 0
+        ]);
 
         return back();
     }
