@@ -11,13 +11,13 @@
                 page.</p>
 
             <div>
-                <form class="w-8/12 mx-auto" action="{{route('events')}}" method="post">
+                <form class="w-8/12 mx-auto" action="{{route('people')}}" method="post">
                     @csrf
 
                     <div class="mb-4">
-                        <label for="title" class="">Title</label>
-                        <input type="text" name="title" id="title" placeholder="Enter Event Title"
-                               class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('title') border-red-500 @enderror"
+                        <label for="title" class="">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Your Name"
+                               class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror"
                                value="{{ old('title') }}">
                         @error('title')
                         <div class="text-red-500 mt-2 text-sm">
@@ -31,7 +31,7 @@
                         <textarea
                             class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y @error('description') border-red-500 @enderror"
                             name="description" id="description" rows="5"
-                            placeholder="Enter Event Description">{{old('description')}}</textarea>
+                            placeholder="Enter What You Like To Do">{{old('description')}}</textarea>
                         @error('description')
                         <div class="text-red-500 mt-2 text-sm">
                             {{ $message }}

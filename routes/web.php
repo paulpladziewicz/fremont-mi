@@ -27,6 +27,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware('auth');
 
 Route::get('/people', [PeopleController::class, 'index'])->name('people');
+Route::post('/people', [PeopleController::class, 'store']);
 
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::post('/events', [EventsController::class, 'store']);
