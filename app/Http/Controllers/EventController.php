@@ -6,7 +6,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class EventsController extends Controller
+class EventController extends Controller
 {
     public function __construct()
     {
@@ -33,16 +33,18 @@ class EventsController extends Controller
             'user_id' => $request->user()->id,
             'title' => $request->title,
             'description' => $request->description,
-            'time' => 0,
-            'link' => 0
         ]);
 
         return back();
     }
 
-    public function destroy(Request $request)
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Event $listing): \Illuminate\Http\RedirectResponse
     {
-//        $this->authorize('delete', $event);
+        $listing->delete();
+
         return back();
     }
 }

@@ -32,4 +32,14 @@ class PeopleController extends Controller
 
         return back();
     }
+
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(People $listing): \Illuminate\Http\RedirectResponse
+    {
+        $listing->delete();
+
+        return back();
+    }
 }

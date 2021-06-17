@@ -31,4 +31,14 @@ class BusinessController extends Controller
 
         return back();
     }
+
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Business $listing): \Illuminate\Http\RedirectResponse
+    {
+        $listing->delete();
+
+        return back();
+    }
 }

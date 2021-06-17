@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EventsController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +28,14 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::get('/people', [PeopleController::class, 'index'])->name('people');
 Route::post('/people', [PeopleController::class, 'store']);
+Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
-Route::get('/events', [EventsController::class, 'index'])->name('events');
-Route::post('/events', [EventsController::class, 'store']);
-Route::get('/events/{title}', [EventsController::class, 'index'])->name('events.page');
+
+Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::post('/events', [EventController::class, 'store']);
+Route::delete('/events/{listing}', [EventController::class, 'destroy'])->name('events.destroy');
 
 Route::get('/business', [BusinessController::class, 'index'])->name('business');
 Route::post('/business', [BusinessController::class, 'store']);
+Route::delete('/business/{listing}', [BusinessController::class, 'destroy'])->name('business.destroy');
 

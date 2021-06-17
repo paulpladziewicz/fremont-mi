@@ -11,7 +11,15 @@
                 <div class="p-4 border-2 m-4">
                     <h3 class="text-2xl font-bold">{{$listing->name}}</h3>
                     <p class="mt-2">{{$listing->description}}</p>
+
+                    <form action="{{ route('people.destroy', $listing->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-blue-500">Delete</button>
+                    </form>
+
                 </div>
+
             @endforeach
 
         @else

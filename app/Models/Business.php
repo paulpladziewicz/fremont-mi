@@ -9,8 +9,7 @@ class Business extends Model
 {
     use HasFactory;
 
-    protected $table = 'business';
-    protected $primaryKey = 'business_id';
+    protected $table = "business";
 
     protected $fillable = [
         'user_id',
