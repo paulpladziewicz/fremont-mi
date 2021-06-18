@@ -42,6 +42,7 @@ class BusinessController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('edit', $id);
         $business = Business::find($id);
         $business->name = $request->name;
         $business->description = $request->description;

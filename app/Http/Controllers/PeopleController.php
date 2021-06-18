@@ -43,6 +43,7 @@ class PeopleController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('edit', $id);
         $people = People::find($id);
         $people->name = $request->name;
         $people->description = $request->description;

@@ -48,6 +48,7 @@ class EventController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('edit', $id);
         $event = Event::find($id);
         $event->title = $request->title;
         $event->description = $request->description;
