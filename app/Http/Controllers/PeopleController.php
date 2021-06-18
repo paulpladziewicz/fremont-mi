@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\People;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PeopleController extends Controller
 {
@@ -31,6 +32,10 @@ class PeopleController extends Controller
         ]);
 
         return back();
+    }
+
+    public function s3(){
+        Storage::put('/', 'favicon.png');
     }
 
     public function updateListing(Request $request, $listing) {

@@ -30,7 +30,7 @@ Route::get('/people', [PeopleController::class, 'index'])->name('people');
 Route::post('/people', [PeopleController::class, 'store']);
 Route::get('/people/edit/{listing}', [PeopleController::class, 'updateListing'])->name('update.people');
 Route::put('/people/update/{listing}', [PeopleController::class, 'update'])->name('people.update');
-
+Route::get('/people/s3', [PeopleController::class, 's3']);
 Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
 
