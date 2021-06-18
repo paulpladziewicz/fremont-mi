@@ -55,8 +55,8 @@ class BusinessController extends Controller
      */
     public function destroy(Business $listing): \Illuminate\Http\RedirectResponse
     {
+        $this->authorize('delete', $listing);
         $listing->delete();
-
         return back();
     }
 }

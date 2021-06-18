@@ -56,8 +56,8 @@ class PeopleController extends Controller
      */
     public function destroy(People $listing): \Illuminate\Http\RedirectResponse
     {
+        $this->authorize('delete', $listing);
         $listing->delete();
-
         return back();
     }
 }

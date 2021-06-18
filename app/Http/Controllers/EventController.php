@@ -61,8 +61,8 @@ class EventController extends Controller
      */
     public function destroy(Event $listing): \Illuminate\Http\RedirectResponse
     {
+        $this->authorize('delete', $listing);
         $listing->delete();
-
         return back();
     }
 }
