@@ -32,6 +32,24 @@ class BusinessController extends Controller
         return back();
     }
 
+    public function updateListing(Request $request, $listing) {
+        $business = DB::table('business')->find($listing);
+
+        return view('update.business', [
+            'business' => $business
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $business = Business::find($id);
+        $business->name = $request->name;
+        $business->description = $request->description;
+        $business->save();
+
+        return redirect('dashboard');
+    }
+
     /**
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
