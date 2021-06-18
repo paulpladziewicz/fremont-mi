@@ -2,16 +2,15 @@
 
 namespace App\Policies;
 
-use App\Models\Post;
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class PostPolicy
+class EventPolicy
 {
     use HandlesAuthorization;
 
-    public function delete(User $user, Post $post)
-    {
-        return $user->id === $post->user_id;
+    public function delete(User $user, Event $listing){
+        return $user->id === $listing->user_id;
     }
 }
