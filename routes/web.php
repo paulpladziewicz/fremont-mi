@@ -33,6 +33,8 @@ Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::post('/events', [EventController::class, 'store']);
+Route::get('/events/edit/{listing}', [EventController::class, 'updateListing'])->name('update.event');
+Route::put('/events/update/{listing}', [EventController::class, 'update'])->name('event.update');
 Route::delete('/events/{listing}', [EventController::class, 'destroy'])->name('events.destroy');
 
 Route::get('/business', [BusinessController::class, 'index'])->name('business');

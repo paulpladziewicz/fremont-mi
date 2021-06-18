@@ -10,7 +10,7 @@ class EventController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth'])->only(['store', 'destroy']);
+        $this->middleware(['auth'])->only(['store', 'updateListing', 'update', 'destroy']);
     }
 
     public function index()
@@ -36,6 +36,24 @@ class EventController extends Controller
         ]);
 
         return back();
+    }
+
+    public function updateListing(Request $request, $listing) {
+        $event = DB::table('events')->find($listing);
+
+        return view('update.events', [
+            'event' => $event
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $event = Event::find($id);
+        $event->title = $request->title;
+        $event->description = $request->description;
+        $event->save();
+
+        return redirect('dashboard');
     }
 
     /**

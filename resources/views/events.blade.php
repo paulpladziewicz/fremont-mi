@@ -12,11 +12,16 @@
                     <h3 class="text-2xl font-bold">{{$listing->title}}</h3>
                     <p class="mt-2">{{$listing->description}}</p>
 
-                            <form action="{{ route('events.destroy', $listing->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-blue-500">Delete</button>
-                            </form>
+                    <form action="{{ route('update.event', $listing->id) }}" method="get">
+                        @csrf
+                        <button type="submit" class="text-blue-500">Edit</button>
+                    </form>
+
+                    <form action="{{ route('events.destroy', $listing->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-blue-500">Delete</button>
+                    </form>
 
                 </div>
             @endforeach
