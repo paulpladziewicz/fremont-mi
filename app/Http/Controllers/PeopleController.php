@@ -48,7 +48,7 @@ class PeopleController extends Controller
         $people->description = $request->description;
         $people->save();
 
-        return redirect('dashboard');
+        return redirect('people');
     }
 
     /**

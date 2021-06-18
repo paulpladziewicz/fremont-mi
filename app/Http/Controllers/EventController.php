@@ -53,7 +53,7 @@ class EventController extends Controller
         $event->description = $request->description;
         $event->save();
 
-        return redirect('dashboard');
+        return redirect('events');
     }
 
     /**

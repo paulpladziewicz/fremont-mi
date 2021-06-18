@@ -47,7 +47,7 @@ class BusinessController extends Controller
         $business->description = $request->description;
         $business->save();
 
-        return redirect('dashboard');
+        return redirect('business');
     }
 
     /**
