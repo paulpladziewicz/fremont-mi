@@ -33,6 +33,24 @@ class PeopleController extends Controller
         return back();
     }
 
+    public function updateListing(Request $request, $listing) {
+        $people = DB::table('people')->find($listing);
+
+        return view('update.people', [
+            'people' => $people
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $people = People::find($id);
+        $people->name = $request->name;
+        $people->description = $request->description;
+        $people->save();
+
+        return redirect('dashboard');
+    }
+
     /**
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */

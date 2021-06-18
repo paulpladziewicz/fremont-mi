@@ -2,28 +2,32 @@
 
 @section('content')
     <section class="mx-4">
-        Events
+        <h1 class="h1 text-gray-800 mb-12">Update Self</h1>
     </section>
 
-    <div class="flex">
-        @if ($events->count())
-            @foreach ($events as $listing)
-                <div class="p-4 border-2 m-4">
-                    <h3 class="text-2xl font-bold">{{$listing->title}}</h3>
-                    <p class="mt-2">{{$listing->description}}</p>
-
-                    <form action="{{ route('events.destroy', $listing->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="text-blue-500">Delete</button>
-                    </form>
-
-                </div>
-            @endforeach
-
-        @else
-            <p>There are no events listed.</p>
-        @endif
+    <div class="w-8/12 mx-auto">
+        <form action="{{route('people.update', $people->id)}}" method="post">
+            @csrf
+            @method('PUT')
+            <div class="mb-4">
+                <label for="name" class="sr-only">Update Name</label>
+                <input type="text" name="name" id="name" placeholder="Update Name"
+                       class="bg-gray-100 border-2 w-full p-4 rounded-lg"
+                       value="{{ $people->name }}">
+            </div>
+            <div class="mb-4">
+                <label for="description" class="sr-only">Update Description</label>
+                <textarea
+                    class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y"
+                    name="description" id="description" rows="5"
+                    placeholder="Update Description">{{ $people->description }}</textarea>
+            </div>
+            <div>
+                <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
+                    Update Self
+                </button>
+            </div>
+        </form>
     </div>
 
 @endsection
