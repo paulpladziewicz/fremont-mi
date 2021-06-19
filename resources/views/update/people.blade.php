@@ -6,6 +6,13 @@
     </section>
 
     <div class="w-8/12 mx-auto">
+
+        <form action="{{route('image.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="image" id="image">
+            <button type="submit">Upload</button>
+        </form>
+
         <form action="{{route('people.update', $people->id)}}" method="post">
             @csrf
             @method('PUT')
@@ -22,6 +29,7 @@
                     name="description" id="description" rows="5"
                     placeholder="Update Description">{{ $people->description }}</textarea>
             </div>
+
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
                     Update Self

@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,6 @@ Route::put('/people/update/{listing}', [PeopleController::class, 'update'])->nam
 Route::get('/people/s3', [PeopleController::class, 's3']);
 Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
-
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/events/edit/{listing}', [EventController::class, 'updateListing'])->name('update.event');
@@ -46,3 +46,5 @@ Route::get('/business/edit/{listing}', [BusinessController::class, 'updateListin
 Route::put('/business/update/{listing}', [BusinessController::class, 'update'])->name('business.update');
 Route::delete('/business/{listing}', [BusinessController::class, 'destroy'])->name('business.destroy');
 
+Route::post('/images/store', [ImageController::class, 'store'])->name('image.store');
+Route::get('/images/{image}', [ImageController::class, 'show']);
