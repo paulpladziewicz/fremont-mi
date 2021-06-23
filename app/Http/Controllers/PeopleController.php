@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PeopleController extends Controller
@@ -33,11 +34,14 @@ class PeopleController extends Controller
         return back();
     }
 
-    public function updateListing(Request $request, $listing) {
-        $people = DB::table('people')->find($listing);
 
+    public function updateListing() {
+        $id = Auth::id();
+        $people = DB::table('people')
+            ->where('user_id', '=', $id)
+            ->get();
         return view('update.people', [
-            'people' => $people
+            'people' => $people[0]
         ]);
     }
 

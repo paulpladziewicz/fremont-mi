@@ -26,4 +26,7 @@
     p {
         @apply text-gray-800;
     }
+    a {
+        @apply hover:text-purple-600;
+    }
 }

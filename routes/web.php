@@ -28,9 +28,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::get('/people', [PeopleController::class, 'index'])->name('people');
 Route::post('/people', [PeopleController::class, 'store']);
-Route::get('/people/edit/{listing}', [PeopleController::class, 'updateListing'])->name('update.people');
+Route::get('/profile/edit', [PeopleController::class, 'updateListing'])->name('update.profile');
 Route::put('/people/update/{listing}', [PeopleController::class, 'update'])->name('people.update');
-
 Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('people.destroy');
 
 

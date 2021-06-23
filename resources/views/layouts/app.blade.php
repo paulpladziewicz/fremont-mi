@@ -16,13 +16,12 @@
                     class='text-gray-800'>MI</span></span></a>
     </div>
     <ul class="flex text-lg font-semibold">
-        <li class="ml-3"><a href="{{route('people')}}">People</a></li>
-        <li class="ml-3"><a href="{{route('events')}}">Events</a></li>
-        <li class="ml-3"><a href="{{route('business')}}">Business</a></li>
+        <li><a href="{{route('people')}}">People</a></li>
+        <li class="ml-8"><a href="{{route('events')}}">Events</a></li>
+        <li class="ml-8"><a href="{{route('business')}}">Business</a></li>
     </ul>
     <ul class="flex text-lg font-semibold">
         @auth
-            <li class="ml-3"><a href="{{route('dashboard')}}">{{auth()->user()->name}}</a></li>
             <li class="ml-3 font-normal"><a href="{{route('dashboard')}}">Dashboard</a></li>
             <li class="ml-3">
                 <form action="{{route('logout')}}" method="post">
