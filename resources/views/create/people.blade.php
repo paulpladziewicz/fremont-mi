@@ -6,25 +6,23 @@
     </section>
 
     <div class="w-8/12 mx-auto">
-        <form action="{{route('people.update', $people->id)}}" method="post">
+        <form action="{{route('people')}}" method="post">
             @csrf
-            @method('PUT')
             <div class="mb-4">
-                <label for="name" class="sr-only">Update Name</label>
-                <input type="text" name="name" id="name" placeholder="Update Name"
-                       class="bg-gray-100 border-2 w-full p-4 rounded-lg"
-                       value="{{ $people->name }}">
+                <label for="name" class="">Profile Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Profile Name"
+                       class="bg-gray-100 border-2 w-full p-4 rounded-lg">
             </div>
             <div class="mb-4">
-                <label for="description" class="sr-only">Update Description</label>
+                <label for="description" class="">Update Description</label>
                 <textarea
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y"
                     name="description" id="description" rows="5"
-                    placeholder="Update Description">{{ $people->description }}</textarea>
+                    placeholder="Enter a little about yourself..."></textarea>
             </div>
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
-                    Update Self
+                    Create Profile
                 </button>
             </div>
         </form>

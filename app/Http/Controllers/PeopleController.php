@@ -34,6 +34,10 @@ class PeopleController extends Controller
         return back();
     }
 
+    public function create()
+    {
+        return view('create.people');
+    }
 
     public function updateListing() {
         $id = Auth::id();
