@@ -1,12 +1,10 @@
 @extends('layouts.dashboard')
 
 @section('dashboard-display-column')
-    <section class="mx-4">
-        <h1 class="h1 text-gray-800 mb-12">Update Profile</h1>
-    </section>
+    <div class="mx-4">
+        <h1 class="h1 text-gray-800 mb-8">Update Profile</h1>
 
-    <div class="w-8/12 mx-auto">
-        <form action="{{route('people.update', $people->id)}}" method="post">
+        <form action="{{route('people.update', $people->id)}}" method="post" style="max-width:600px">
             @csrf
             @method('PUT')
             <div class="mb-4">
@@ -24,7 +22,7 @@
             </div>
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
-                    Update Self
+                    Update Profile
                 </button>
             </div>
         </form>

@@ -1,12 +1,10 @@
 @extends('layouts.dashboard')
 
 @section('dashboard-display-column')
-    <section class="mx-4">
+    <div class="mx-4">
         <h1 class="h1 text-gray-800 mb-12">Update Self</h1>
-    </section>
 
-    <div class="w-8/12 mx-auto">
-        <form action="{{route('people')}}" method="post">
+        <form action="{{route('people')}}" method="post" style="max-width:600px">
             @csrf
             <div class="mb-4">
                 <label for="name" class="">Profile Name</label>

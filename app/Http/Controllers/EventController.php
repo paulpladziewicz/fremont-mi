@@ -22,6 +22,12 @@ class EventController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        $this->middleware(['auth']);
+        return view('create.events');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -38,7 +44,8 @@ class EventController extends Controller
         return back();
     }
 
-    public function updateListing(Request $request, $listing) {
+    public function updateListing(Request $request, $listing)
+    {
         $event = DB::table('events')->find($listing);
 
         return view('update.events', [

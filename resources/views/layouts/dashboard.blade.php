@@ -8,16 +8,16 @@
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-6"><a href="{{route('dashboard')}}">Dashboard</a></li>
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-4">Profile</li>
                 <ul class="ml-8 mt-4">
-                    <li class="text-xl font-light"><a href="{{route('update.profile')}}">Create Profile</a></li>
+                    <li class="text-xl font-light"><a href="{{route('profile.create')}}">Create Profile</a></li>
                     <li class="mt-3 text-xl font-light"><a href="{{route('update.profile')}}">Update Profile</a></li>
                 </ul>
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-4">Events</li>
                 <ul class="ml-8 mt-4">
-                    <li class="text-xl font-light">Create Event</li>
+                    <li class="text-xl font-light"><a href="{{route('event.create')}}">Create Event</a></li>
                 </ul>
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-4">Business</li>
                 <ul class="ml-8 mt-4">
-                    <li class="text-xl font-light">Create Business Listing</li>
+                    <li class="text-xl font-light"><a href="{{route('business.create')}}">Create Business Listing</a></li>
                 </ul>
             </ul>
         </div>

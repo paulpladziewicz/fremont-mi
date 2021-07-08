@@ -36,6 +36,7 @@ class PeopleController extends Controller
 
     public function create()
     {
+        $this->middleware(['auth']);
         return view('create.people');
     }
 

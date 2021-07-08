@@ -36,14 +36,14 @@ Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::post('/events', [EventController::class, 'store']);
-Route::post('/events/create', [EventController::class, 'create'])->name('event.create');
+Route::get('/events/create', [EventController::class, 'create'])->name('event.create');
 Route::get('/events/edit/{listing}', [EventController::class, 'updateListing'])->name('update.event');
 Route::put('/events/update/{listing}', [EventController::class, 'update'])->name('event.update');
 Route::delete('/events/{listing}', [EventController::class, 'destroy'])->name('events.destroy');
 
 Route::get('/business', [BusinessController::class, 'index'])->name('business');
 Route::post('/business', [BusinessController::class, 'store']);
-Route::post('/business/create', [BusinessController::class, 'create'])->name('business.create');
+Route::get('/business/create', [BusinessController::class, 'create'])->name('business.create');
 Route::get('/business/edit/{listing}', [BusinessController::class, 'updateListing'])->name('update.business');
 Route::put('/business/update/{listing}', [BusinessController::class, 'update'])->name('business.update');
 Route::delete('/business/{listing}', [BusinessController::class, 'destroy'])->name('business.destroy');

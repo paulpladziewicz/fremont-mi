@@ -17,6 +17,12 @@ class BusinessController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        $this->middleware(['auth']);
+        return view('create.business');
+    }
+
     public function store(Request $request) {
 
         $this->validate($request, [
