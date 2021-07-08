@@ -6,7 +6,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,22 +28,23 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::get('/people', [PeopleController::class, 'index'])->name('people');
 Route::post('/people', [PeopleController::class, 'store']);
-Route::get('/people/edit/{listing}', [PeopleController::class, 'updateListing'])->name('update.people');
+Route::get('/profile/create', [PeopleController::class, 'create'])->name('profile.create');
+Route::get('/profile/edit', [PeopleController::class, 'updateListing'])->name('update.profile');
 Route::put('/people/update/{listing}', [PeopleController::class, 'update'])->name('people.update');
-Route::get('/people/s3', [PeopleController::class, 's3']);
 Route::delete('/people/{listing}', [PeopleController::class, 'destroy'])->name('people.destroy');
+
 
 Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::post('/events', [EventController::class, 'store']);
+Route::get('/events/create', [EventController::class, 'create'])->name('event.create');
 Route::get('/events/edit/{listing}', [EventController::class, 'updateListing'])->name('update.event');
 Route::put('/events/update/{listing}', [EventController::class, 'update'])->name('event.update');
 Route::delete('/events/{listing}', [EventController::class, 'destroy'])->name('events.destroy');
 
 Route::get('/business', [BusinessController::class, 'index'])->name('business');
 Route::post('/business', [BusinessController::class, 'store']);
+Route::get('/business/create', [BusinessController::class, 'create'])->name('business.create');
 Route::get('/business/edit/{listing}', [BusinessController::class, 'updateListing'])->name('update.business');
 Route::put('/business/update/{listing}', [BusinessController::class, 'update'])->name('business.update');
 Route::delete('/business/{listing}', [BusinessController::class, 'destroy'])->name('business.destroy');
 
-Route::post('/images/store', [ImageController::class, 'store'])->name('image.store');
-Route::get('/images/{image}', [ImageController::class, 'show']);

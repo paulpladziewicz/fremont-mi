@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class PeopleController extends Controller
 {
@@ -34,15 +34,19 @@ class PeopleController extends Controller
         return back();
     }
 
-    public function s3(){
-        Storage::put('/', 'favicon.png');
+    public function create()
+    {
+        $this->middleware(['auth']);
+        return view('create.people');
     }
 
-    public function updateListing(Request $request, $listing) {
-        $people = DB::table('people')->find($listing);
-
+    public function updateListing() {
+        $id = Auth::id();
+        $people = DB::table('people')
+            ->where('user_id', '=', $id)
+            ->get();
         return view('update.people', [
-            'people' => $people
+            'people' => $people[0]
         ]);
     }
 

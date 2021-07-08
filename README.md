@@ -1,2 +1,2 @@
 # FremontMI
-A local directory that facilitates community.
+A local directory that brings people together.
