@@ -8,7 +8,6 @@
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-6"><a href="{{route('dashboard')}}">Dashboard</a></li>
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-4">Profile</li>
                 <ul class="ml-8 mt-4">
-                    <li class="text-xl font-light"><a href="{{route('profile.create')}}">Create Profile</a></li>
                     <li class="mt-3 text-xl font-light"><a href="{{route('update.profile')}}">Update Profile</a></li>
                 </ul>
                 <li class="text-3xl text-gray-800 font-semibold ml-4 mt-4">Events</li>
