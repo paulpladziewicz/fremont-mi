@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 class DashboardController extends Controller
 {
     public function __construct()
@@ -11,6 +13,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard');
+        $events = DB::table('events')->where('user_id', auth()->id())->get();
+        $business = DB::table('business')->where('user_id', auth()->id())->get();
+        return view('dashboard', [
+            'events' => $events,
+            'business' => $business
+        ]);
     }
 }
