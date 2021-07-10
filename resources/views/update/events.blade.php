@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-@section('content')
+@section('dashboard-display-column')
     <section class="mx-4">
         <h1 class="h1 text-gray-800 mb-12">Update Event</h1>
     </section>
