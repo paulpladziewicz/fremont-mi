@@ -21,7 +21,7 @@
             </div>
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
-                    Update Business
+                    Create Business Listing
                 </button>
             </div>
         </form>
