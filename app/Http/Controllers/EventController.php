@@ -22,12 +22,6 @@ class EventController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        $this->middleware(['auth']);
-        return view('create.events');
-    }
-
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -41,7 +35,13 @@ class EventController extends Controller
             'description' => $request->description,
         ]);
 
-        return back();
+        return redirect('dashboard');
+    }
+
+    public function create()
+    {
+        $this->middleware(['auth']);
+        return view('create.events');
     }
 
     public function updateListing(Request $request, $listing)

@@ -31,7 +31,7 @@ class PeopleController extends Controller
             'description' => $request->description,
         ]);
 
-        return back();
+        return redirect('dashboard');
     }
 
     public function create()

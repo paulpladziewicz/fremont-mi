@@ -35,7 +35,7 @@ class BusinessController extends Controller
             'description' => $request->description
         ]);
 
-        return back();
+        return redirect('dashboard');
     }
 
     public function updateListing(Request $request, $listing) {
