@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-4">
                 <label for="name" class="sr-only">Business Name</label>
-                <input type="text" name="name" id="name" placeholder="Update Business Name"
+                <input type="text" name="name" id="name" placeholder="Enter Business Name"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg"
                 >
             </div>
@@ -17,7 +17,7 @@
                 <textarea
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y"
                     name="description" id="description" rows="5"
-                    placeholder="Update Business Description"></textarea>
+                    placeholder="Enter Business Description"></textarea>
             </div>
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">

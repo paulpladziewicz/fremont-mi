@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-4">
                 <label for="title" class="sr-only">Title</label>
-                <input type="text" name="title" id="title" placeholder="Update Title"
+                <input type="text" name="title" id="title" placeholder="Enter Title"
                        class="bg-gray-100 border-2 w-full p-4 rounded-lg"
                 >
             </div>
@@ -17,11 +17,11 @@
                 <textarea
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg resize-y"
                     name="description" id="description" rows="5"
-                    placeholder="Update Description"></textarea>
+                    placeholder="Enter Description"></textarea>
             </div>
             <div>
                 <button type="submit" class="bg-purple-500 text-white px-4 py-3 rounded font-medium w-full">
-                    Update Event
+                    Create Event
                 </button>
             </div>
         </form>
