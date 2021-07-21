@@ -66,7 +66,7 @@
                          rows="5" required></textarea>
                 </div>
                 <div>
-                    <input class='mt-4 btn' type="submit" value="submit">
+                    <input class='mt-4 btn' type="submit" value="Submit">
                 </div>
             </form>
 

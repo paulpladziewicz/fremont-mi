@@ -32,6 +32,9 @@
 }
 
 @layer components {
+    .btn {
+        @apply py-2 px-4 bg-purple-700 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800 focus:outline-none cursor-pointer;
+    }
     .btn-sm {
         @apply py-1 px-3 bg-purple-700 text-white font-semibold rounded-lg shadow-md hover:bg-purple-800 focus:outline-none cursor-pointer;
     }
